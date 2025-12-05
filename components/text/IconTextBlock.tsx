@@ -1,6 +1,5 @@
-import React, { ElementType } from 'react';
-import type { LucideIcon } from 'lucide-react';
-
+import React, { ElementType } from "react";
+import type { LucideIcon } from "lucide-react";
 
 interface IconTextBlockProps {
   icon: LucideIcon | ElementType;
@@ -11,8 +10,6 @@ interface IconTextBlockProps {
   iconSize?: number;
   iconColor?: string;
   bg?: string;
-
-
 }
 const IconTextBlock: React.FC<IconTextBlockProps> = ({
   icon: IconComponent,
@@ -22,17 +19,19 @@ const IconTextBlock: React.FC<IconTextBlockProps> = ({
   textSize = "1xl",
   iconSize = 30,
   iconColor = "orange",
-  bg = "gray-700"
+  bg = "gray-300",
 }) => {
   return (
-    <div className={`flex items-center mt-2 justify-center gap-2 p-4 rounded-sm bg-${bg} ${className}`}>
+    <div
+      className={`flex items-center mt-2 justify-center gap-2 p-4 rounded-sm bg-${bg} ${className}`}
+    >
       <IconComponent size={iconSize} color={iconColor} />
       <div className={`flex flex-col items-start text-${textSize}`}>
         <p>{descOne}</p>
         <p>{descTwo}</p>
       </div>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
-export default IconTextBlock
+export default IconTextBlock;

@@ -1,4 +1,6 @@
-import React from 'react'
+"use client";
+
+import React from "react";
 import {
   Card,
   CardContent,
@@ -6,13 +8,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Checkbox } from '../ui/checkbox';
-import { Slider } from "@/components/ui/slider"
-import TextIcon from '../text/TextIcon';
-import { icons } from '@/constants/icons';
-
-
+} from "@/components/ui/card";
+import { Checkbox } from "../ui/checkbox";
+import { Slider } from "@/components/ui/slider";
+import TextIcon from "../text/TextIcon";
+import { icons } from "@/constants/icons";
 
 interface TaskDueCardsProps {
   tasksCheckBox?: string[];
@@ -22,23 +22,27 @@ interface TaskDueCardsProps {
   className?: string;
 }
 const TaskDueCard: React.FC<TaskDueCardsProps> = ({
-  tasksCheckBox = ['test1', 'test2'], // sample default if not sample is given 
-  upcomingEvents = ['EventSample1', 'EventSample2'],
+  tasksCheckBox = ["test1", "test2"], // sample default if not sample is given
+  upcomingEvents = ["EventSample1", "EventSample2"],
   baseScore = 100,
   currentScore = 33,
   className,
 }) => {
+  const handleClickc = () => {
+    alert("open-modal-write-notes");
+  };
   return (
-    <Card className='mt-4 rounded-sm'>
-      <CardHeader className='flex flex-row justify-between items-center'>
+    <Card className="mt-4 rounded-sm">
+      <CardHeader className="flex flex-row justify-between items-center">
         <CardDescription>Task Due</CardDescription>
-        <CardTitle className='bg-emerald-700 rounded-md p-1 text-sm'>Solve</CardTitle>
+        <CardTitle className="bg-emerald-700 rounded-md p-1 text-sm text-white">
+          Solve
+        </CardTitle>
       </CardHeader>
-      <CardContent className='flex flex-col gap-2'>
-
+      <CardContent className="flex flex-col gap-2">
         {/* CHECKBOX LIST */}
         {tasksCheckBox.map((item: string) => (
-          <div key={item} className='flex flex-col'>
+          <div key={item} className="flex flex-col">
             <div className="items-top flex space-x-2">
               <Checkbox id="terms1" />
               <div className="grid gap-1.5 leading-none">
@@ -54,28 +58,38 @@ const TaskDueCard: React.FC<TaskDueCardsProps> = ({
         ))}
 
         {/* SCORE SLIDER */}
-        <Slider className="mt-2" defaultValue={[currentScore]} max={baseScore} step={1} />
+        <Slider
+          className="mt-2"
+          defaultValue={[currentScore]}
+          max={baseScore}
+          step={1}
+        />
       </CardContent>
 
-
       {/* another line */}
-      <CardHeader className='flex flex-row justify-between items-center'>
+      <CardHeader className="flex flex-row justify-between items-center">
         <CardDescription>Upcoming Events</CardDescription>
       </CardHeader>
-      <CardContent className='flex flex-col'>
+      <CardContent className="flex flex-col gap-2">
         {upcomingEvents.map((event: string) => (
           <TextIcon
+            key={event}
             icon={icons.todo}
             text={event}
+            className={`bg-gray-300 p-1 rounded-sm`}
           />
         ))}
       </CardContent>
       <CardFooter>
-        <p>Card Footer</p>
+        <TextIcon
+          icon={icons.note}
+          text="Quick Notes..."
+          className={`hover:cursor-pointer`}
+          handleClick={handleClickc}
+        />
       </CardFooter>
-    </Card >
-
-  )
-}
+    </Card>
+  );
+};
 
 export default TaskDueCard;

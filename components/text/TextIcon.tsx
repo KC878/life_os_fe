@@ -1,21 +1,25 @@
-import React, { ElementType } from 'react';
-import type { LucideIcon } from 'lucide-react';
+import React, { ElementType } from "react";
+import type { LucideIcon } from "lucide-react";
 
 interface TextIconProps {
   // Use ElementType or LucideIcon for component props
   icon?: LucideIcon | ElementType;
   text: string;
   className?: string;
+  handleClick?: () => void;
 }
 
 const TextIcon: React.FC<TextIconProps> = ({
   icon: IconComponent, // Renaming prop to "IconComponent" (capitalized)
   text,
-  className
+  className,
+  handleClick,
 }) => {
-
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div
+      className={`flex items-center gap-2 ${className}`}
+      onClick={handleClick}
+    >
       {/* 
         1. Check if IconComponent exists.
         2. Render it using JSX: <IconComponent /> 
