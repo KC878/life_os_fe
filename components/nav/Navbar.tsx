@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { LogOut, Moon, Settings, Sidebar, Sun, User } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 
 import {
   DropdownMenu,
@@ -13,9 +13,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 import { useTheme } from "next-themes"
-import { SidebarTrigger } from './ui/sidebar'
+import { SidebarTrigger } from '../ui/sidebar'
 
 const DEFAULT_ITEM_STYLE = "h-[1.2rem] w-[1.2rem] m4-2";
 

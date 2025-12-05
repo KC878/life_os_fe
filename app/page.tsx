@@ -1,3 +1,7 @@
+import TextIcon from "@/components/TextIcon";
+import { icons } from "@/constants/icons";
+
+
 export default function Home() {
   return (
     <div className="p-4 space-y-4">
@@ -7,7 +11,7 @@ export default function Home() {
 
         {/* Left box */}
         <div className="bg-primary-foreground rounded-sm p-2 min-h-[300px]">
-          Preview
+          <TextIcon icon={icons.gallery} text="Preview" />
         </div>
 
         {/* Right side grid */}
