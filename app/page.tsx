@@ -1,5 +1,6 @@
-import IconTextBlock from "@/components/IconTextBlock";
-import TextIcon from "@/components/TextIcon";
+import TaskDueCard from "@/components/cards/TaskDueCard";
+import IconTextBlock from "@/components/text/IconTextBlock";
+import TextIcon from "@/components/text/TextIcon";
 import { icons } from "@/constants/icons";
 
 
@@ -14,6 +15,7 @@ export default function Home() {
         <div className="bg-primary-foreground rounded-sm p-4 min-h-[300px]">
           <TextIcon icon={icons.gallery} text="Preview" />
           <IconTextBlock icon={icons.fire} descOne="Focus Goal" descTwo="Deep Work Finish homepage UI" />
+          <TaskDueCard />
         </div>
 
         {/* Right side grid */}
