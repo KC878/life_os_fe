@@ -1,4 +1,4 @@
-import { BrickWallFire, GalleryThumbnails, ListTodo, SquarePen } from 'lucide-react';
+import { BrickWallFire, Camera, GalleryThumbnails, ListTodo, SquarePen } from 'lucide-react';
 
 
 export const icons = {
@@ -6,4 +6,5 @@ export const icons = {
   fire: BrickWallFire,
   todo: ListTodo,
   note: SquarePen,
+  camera: Camera,
 }

@@ -1,4 +1,5 @@
 import TaskDueCard from "@/components/cards/TaskDueCard";
+import TaskPreviewCard from "@/components/cards/TaskPreviewCard";
 import IconTextBlock from "@/components/text/IconTextBlock";
 import TextIcon from "@/components/text/TextIcon";
 import { icons } from "@/constants/icons";
@@ -17,7 +18,21 @@ export default function Home() {
             descTwo="Deep Work Finish homepage UI"
           />
           <TaskDueCard />
-          <TaskDueCard />
+
+          <div
+            className="
+              mt-4 overflow-auto h-[30vh]  
+              [scrollbar-width:thin]
+              [&::-webkit-scrollbar]:w-1
+            [&::-webkit-scrollbar-thumb]:bg-gray-400
+              [&::-webkit-scrollbar-thumb]:rounded
+             "
+          >
+            <div>Preview</div>
+            {[1, 2, 3, 4, 5, 6, 7].map((item: number) => (
+              <TaskPreviewCard key={item} icon={icons.camera} />
+            ))}
+          </div>
         </div>
 
         {/* Right side grid */}
